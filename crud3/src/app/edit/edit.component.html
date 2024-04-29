@@ -1,0 +1,45 @@
+<div class="container col-md-12">
+    <div class="form-group">
+        <div class="form-control">
+            <form  [formGroup]="taskForm" (ngSubmit)="onSubmit(taskForm.value)" >
+                <div class="mb-3">
+                  <label for="title" class="form-label">Titile</label>
+                  <input type="text" class="form-control" formControlName="title" id="title" >
+                  
+                </div>
+                <div class="mb-3">
+                  <label for="desc" class="form-label">Description</label>
+                  <input type="text" class="form-control" id="desc" formControlName="desc">
+                </div>
+                <div>
+                    <label class="form-radio-label" for="stat">status:</label>
+                </div>
+                <div class="mb-3 form-check">
+                    <div class="row">
+                        <div class="col">
+                            <label class="form-check-label" for="completed">Completed</label>
+                            <input type="radio" class="form-check-input" formControlName="status" name="status"
+                             value="completed" id="complete">
+                        </div>
+                        <div class="col">
+                            <label class="form-check-label" for="onGoing">on Going</label>
+                            <input type="radio" class="form-check-input" formControlName="status" name="status" 
+                            value="onGoing" id="onGoing">
+                        </div>
+                        <div class="col">
+                            <label class="form-check-label" for="notStarted">Pending</label>
+                            <input type="radio" class="form-check-input" formControlName="status" name="status"
+                             value="Pending" id="notStarted">
+                        </div>
+                    </div>
+                    
+                </div>
+                <button type="submit" class="btn btn-primary"  >Submit</button>
+                
+
+              </form>
+        </div>
+    </div>
+</div>
+
+

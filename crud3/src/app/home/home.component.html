@@ -1,0 +1,62 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Title</th>
+          <th scope="col">Description</th>
+          <th scope="col">Status</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tr *ngFor="let tk of taskListFromService;let i=index ">
+       <td>
+        {{tk.id}}
+       </td>
+        <td>
+            {{tk.title}}
+        </td>
+        <td>
+            {{tk.desc}}
+        </td>
+        <td>
+           {{tk.status}}
+        </td>
+    
+        <td>
+            <a href="" class="btn btn-secondary"  (click)="onEditClick(tk.id)"
+            style="width: 120px;">Edit</a>
+        </td>
+        <td>
+            <a href="" class="btn btn-danger" (click)="onDelete(tk.id)"
+            style="width: 120px;">Delete</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <div class="container">
+                <div class="row col-md-12">
+                    <div class="col">
+                        <button type="menu" class="btn btn-lg btn-primary" style="width: 140px;" 
+                        routerLink="/create" routerLinkActive="Active">create</button>
+                    </div>
+                    <div class="col">
+                        
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="container">
+                <div class="row" >
+                    <div class="col">
+                        <button type="reset" class="btn btn-lg btn-secondary" style="width: 140px;" (click)="onClear()">Clear All</button>
+                    </div>
+                </div>
+            </div>
+        </td>
+      </tr>
+  </table>
+
+
+<router-outlet></router-outlet>
+
